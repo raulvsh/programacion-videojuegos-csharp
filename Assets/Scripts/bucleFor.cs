@@ -5,15 +5,58 @@ public class bucleFor : MonoBehaviour
 {
     public int numeroFibonacci;
 
-    int x1 = 0;
-    int x2 = 1;
+   
 
     List<int> fibonacciList = new List<int>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        int c = 0;
+        calculaSerieFibonacciFor(numeroFibonacci);
+        calculaSerieFibonacciWhile(numeroFibonacci);
+
+    }
+
+    void calculaSerieFibonacciWhile(int numeroFibonacci)
+    {
+
+        int x1 = 0;
+        int x2 = 1;
+        int numActual = 0;
+        string serieCompletaFibonacci = "";
+
+        int i = 0;
+
+        serieCompletaFibonacci += x1;
+        serieCompletaFibonacci += ", ";
+
+        serieCompletaFibonacci += x2;
+
+        fibonacciList.Add(x1);
+        fibonacciList.Add(x2);
+
+        while (i < numeroFibonacci - 2)
+        {
+            serieCompletaFibonacci += ", ";
+            serieCompletaFibonacci += (x1 + x2).ToString();
+
+            numActual = x2;
+            x2 = x1 + x2;
+            x1 = numActual;
+
+            i++;
+        }
+
+        Debug.Log("Funcion con while: " + serieCompletaFibonacci);
+
+    }
+
+    void calculaSerieFibonacciFor(int numeroFibonacci)
+    {
+        int x1 = 0;
+        int x2 = 1;
+        int numActual = 0;
+
         fibonacciList.Add(x1);
         fibonacciList.Add(x2);
 
@@ -29,15 +72,14 @@ public class bucleFor : MonoBehaviour
             //Debug.Log("x1: " + x1);
             //Debug.Log("x2: " + x2);
             //Debug.Log("c: " + (x1 + x2));
-            fibonacciList.Add(x1+x2);
+            fibonacciList.Add(x1 + x2);
 
-            c = x2;
+            numActual = x2;
             x2 = x1 + x2;
-            x1 = c ;
+            x1 = numActual;
 
         }
-        Debug.Log(string.Join(", ", fibonacciList));
-
+        Debug.Log("Bucle for: " + string.Join(", ", fibonacciList));
     }
 }
 
