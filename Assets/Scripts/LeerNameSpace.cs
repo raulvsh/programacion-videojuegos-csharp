@@ -7,6 +7,8 @@ public class LeerNameSpace : MonoBehaviour
     {
         print(NameSpace1.Variables.puntuacion);
 
+
+        NameSpace1.Variables.puntuacion++;
         int valor = 2;
         print("El cuadrado de " + valor + " es: " + NameSpace1.Metodos.cuadrado(valor));
     }
