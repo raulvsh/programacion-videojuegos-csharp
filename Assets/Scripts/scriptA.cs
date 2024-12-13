@@ -12,7 +12,8 @@ public class scriptA : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        numero1 = 12;
+        print(numero1);
     }
 
     public static string funcionEstatica()
