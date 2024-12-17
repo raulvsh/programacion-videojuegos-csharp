@@ -9,24 +9,27 @@ public class ArrayList : MonoBehaviour
 
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    List<object> listaArray = new List<object>();
+    List<object> objectList = new List<object>();
+
+
     void Start()
     {
 
-        listaArray.Add("Uno");
-        listaArray.Add(12);
-        listaArray.Add("Tres");
-        listaArray.Add("Cuatro");
-        listaArray.Add(1.2f);
-        listaArray.Add("Seis");
+        //Objetos añadidos a List<object>
+        objectList.Add("Uno");
+        objectList.Add(12);
+        objectList.Add("Tres");
+        objectList.Add("Cuatro");
+        objectList.Add(1.2f);
+        objectList.Add("Seis");
 
-        print("El tamaño de la lista es " + listaArray.Count);
-        foreach (object obj in listaArray)
+        print("El tamaño de la lista es " + objectList.Count);
+        foreach (object obj in objectList)
         {
             print(obj);
         }
 
-        if (listaArray.Contains("Uno"))
+        if (objectList.Contains("Uno"))
         {
             print("Contiene el Uno");
         }
